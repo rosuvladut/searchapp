@@ -1,0 +1,34 @@
+buildscript {
+    repositories{
+        mavenCentral()
+    }
+    dependencies{
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin : 'java'
+apply plugin : 'eclipse'
+apply plugin : 'idea'
+apply plugin : 'org.springframework.boot'
+
+jar {
+    baseName = 'searchapp'
+    group 'com.vlad.sb5'
+    version '1.0-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("junit:junit")
+}
